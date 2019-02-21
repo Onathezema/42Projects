@@ -1,2 +1,2 @@
-# libft
+# First Project: Libft
 Recreating C Library
