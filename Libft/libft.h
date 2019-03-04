@@ -6,15 +6,18 @@
 /*   By: winorth <winorth@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/12 16:25:35 by winorth           #+#    #+#             */
-/*   Updated: 2019/03/03 17:28:33 by winorth          ###   ########.fr       */
+/*   Updated: 2019/03/03 17:45:10 by winorth          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include <string.h>
-#include <strings.h>
-#include <stdlib.h>
-#include <ctype.h>
+#ifndef LIBFT_H
+# define LIBFT_H
+
+# include <unistd.h>
+# include <string.h>
+# include <strings.h>
+# include <stdlib.h>
+# include <ctype.h>
 
 typedef struct		s_list
 {
@@ -88,3 +91,4 @@ void				ft_lstdel(t_list **alst, void (*del)(void *, size_t));
 void				ft_lstadd(t_list **alst, t_list *new);
 void				ft_lstiter(t_list *lst, void (*f)(t_list *elem));
 t_list				*ft_lstmap(t_list *lst, t_list *(*f)(t_list *elem));
+#endif
