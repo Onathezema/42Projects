@@ -6,7 +6,7 @@
 /*   By: winorth <winorth@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/12 19:10:57 by winorth           #+#    #+#             */
-/*   Updated: 2019/02/27 13:58:13 by winorth          ###   ########.fr       */
+/*   Updated: 2019/03/04 13:38:06 by winorth          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strcat(char *s1, const char *s2)
 		return (s1);
 	while (*s2)
 	{
-		s1[len] = s2++;
+		s1[len] = *s2++;
 		len++;
 	}
 	s1[len] = '\0';

@@ -6,7 +6,7 @@
 /*   By: winorth <winorth@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/12 16:25:35 by winorth           #+#    #+#             */
-/*   Updated: 2019/03/03 17:45:10 by winorth          ###   ########.fr       */
+/*   Updated: 2019/03/05 14:25:42 by winorth          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,13 @@ void				*ft_memccpy(void *dst, const void *src, int c, size_t n);
 void				*ft_memmove(void *dst, const void *src, size_t len);
 void				*ft_memchr(const void *s, int c, size_t n);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
-int					ft_strlen(char *str);
+int					ft_strlen(const char *str);
 char				*ft_strdup(const char *s1);
 char				*ft_strcpy(char *dst, const char *src);
 char				*ft_strncpy(char *dest, char *src, unsigned int n);
 char				*ft_strcat(char *s1, const char *s2);
 char				*ft_strncat(char *s1, const char *s2, size_t n);
-size_t				*ft_strlcat(char *dst, const char *src, size_t dstsize);
+size_t				ft_strlcat(char *dst, const char *src, size_t dstsize);
 char				*ft_strchr(const char *s, int c);
 char				*ft_strrchr(const char *s, int c);
 char				*ft_strstr(const char *haystack, const char *needle);
@@ -82,7 +82,7 @@ void				ft_putnbr_fd(int n, int fd);
 int					ft_iswhitespaces(char c);
 int					ft_isstrwhitespaces(char c);
 int					ft_isotherwhitespaces(char c);
-char				*ft_strndup(const char *s, size_t n);
+char				ft_strndup(const char *s, size_t n);
 int					ft_wordcount(const char *s, char c);
 size_t				ft_wordlength(char const *s, int c);
 t_list				*ft_lstnew(void const *content, size_t content_size);

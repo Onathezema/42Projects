@@ -6,7 +6,7 @@
 /*   By: winorth <winorth@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/14 14:13:24 by winorth           #+#    #+#             */
-/*   Updated: 2019/02/27 14:03:09 by winorth          ###   ########.fr       */
+/*   Updated: 2019/03/05 14:11:34 by winorth          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_strncat(char *s1, const char *s2, size_t n)
 	len = ft_strlen(s1);
 	while (*s2 != '\0' && n != 0)
 	{
-		s1[len] == *s2++;
+		s1[len] = *s2++;
 		len++;
 		n--;
 	}
