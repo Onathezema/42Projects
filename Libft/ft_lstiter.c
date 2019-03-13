@@ -6,7 +6,7 @@
 /*   By: winorth <winorth@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/21 18:03:10 by winorth           #+#    #+#             */
-/*   Updated: 2019/03/02 14:17:46 by winorth          ###   ########.fr       */
+/*   Updated: 2019/03/06 12:39:50 by winorth          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstiter(t_list *lst, void (*f)(t_list *elem))
 {
-	if (lst != NULL)
+	while (lst != NULL)
 	{
 		f(lst);
 		lst = lst->next;

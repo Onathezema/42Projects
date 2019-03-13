@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isascii.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: winorth <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: winorth <winorth@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/13 14:26:01 by winorth           #+#    #+#             */
-/*   Updated: 2019/02/18 13:01:20 by winorth          ###   ########.fr       */
+/*   Updated: 2019/03/09 15:21:03 by winorth          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,6 @@
 int		ft_isascii(int c)
 {
 	if (c >= 0 && c <= 0177)
-		return (c);
-	else
-		return (0);
+		return (1);
+	return (0);
 }

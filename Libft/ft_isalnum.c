@@ -3,21 +3,18 @@
 /*                                                        :::      ::::::::   */
 /*   ft_isalnum.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: winorth <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: winorth <winorth@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/14 12:25:26 by winorth           #+#    #+#             */
-/*   Updated: 2019/02/18 12:57:18 by winorth          ###   ########.fr       */
+/*   Updated: 2019/03/09 14:51:44 by winorth          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <unistd.h>
+#include <stdio.h>
 
 int		ft_isalnum(int c)
 {
-	if ((c >= 060 && c <= 071) || (c >= 101 && c <= 132))
-		return (c);
-	else if (c >= 141 && c <= 172)
-		return (c);
-	else
-		return (0);
+	return ((ft_isalpha(c) == 1 || ft_isdigit(c) == 1) ? 1 : 0);
 }

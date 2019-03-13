@@ -6,7 +6,7 @@
 /*   By: winorth <winorth@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/14 14:36:15 by winorth           #+#    #+#             */
-/*   Updated: 2019/02/26 18:25:38 by winorth          ###   ########.fr       */
+/*   Updated: 2019/03/11 19:36:29 by winorth          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,6 +37,6 @@ char	**ft_strsplit(char const *s, char c)
 		ins = (s[j] == c) ? 0 : 1;
 	}
 	if (ins)
-		i[ins] = ft_strsub(s, start, j - start);
+		i[group] = ft_strsub(s, start, j - start);
 	return (i);
 }

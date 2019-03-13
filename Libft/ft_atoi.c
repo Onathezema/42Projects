@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: winorth <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: winorth <winorth@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/12 15:16:07 by winorth           #+#    #+#             */
-/*   Updated: 2019/02/18 12:58:11 by winorth          ###   ########.fr       */
+/*   Updated: 2019/03/13 15:06:10 by winorth          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,9 @@
 
 int		ft_atoi(const	char *str)
 {
-	int i;
-	int nbr;
-	int nega;
+	int				i;
+	unsigned int	nbr;
+	int				nega;
 
 	i = 0;
 	nbr = 0;

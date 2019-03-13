@@ -6,13 +6,13 @@
 #    By: winorth <winorth@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/14 12:11:20 by winorth           #+#    #+#              #
-#    Updated: 2019/03/04 13:07:59 by winorth          ###   ########.fr        #
+#    Updated: 2019/03/13 16:19:25 by winorth          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-CC = gcc
+CC = gcc -g
 
 FLAG = -Wall -Werror -Wextra
 
@@ -28,7 +28,7 @@ ft_strncpy.c ft_strnequ.c ft_strnew.c ft_strnstr.c ft_strrchr.c \
 ft_strsplit.c ft_strstr.c ft_strsub.c ft_strtrim.c ft_tolower.c ft_toupper.c \
 ft_wordlength.c ft_wordcount.c ft_iswhitespaces.c ft_isstrwhitespaces.c \
 ft_isotherwhitespaces.c ft_lstadd.c ft_lstdel.c ft_lstdelone.c \
-ft_lstiter.c ft_lstmap.c ft_lstnew.c ft_strndup.c
+ft_lstiter.c ft_lstmap.c ft_lstnew.c
 
 OBJS = $(SRC:.c=.o)
 
