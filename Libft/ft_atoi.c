@@ -6,17 +6,17 @@
 /*   By: winorth <winorth@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/12 15:16:07 by winorth           #+#    #+#             */
-/*   Updated: 2019/03/13 15:06:10 by winorth          ###   ########.fr       */
+/*   Updated: 2019/03/18 13:02:20 by winorth          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int		ft_atoi(const	char *str)
+int		ft_atoi(const char *str)
 {
-	int				i;
-	unsigned int	nbr;
-	int				nega;
+	int		i;
+	int		nbr;
+	int		nega;
 
 	i = 0;
 	nbr = 0;

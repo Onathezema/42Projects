@@ -6,7 +6,7 @@
 /*   By: winorth <winorth@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/12 17:03:59 by winorth           #+#    #+#             */
-/*   Updated: 2019/03/13 13:53:41 by winorth          ###   ########.fr       */
+/*   Updated: 2019/03/18 13:49:03 by winorth          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_putnbr(int n)
 {
-	if (n == INT_MIN)
+	if (n == -2147483648)
 		return (ft_putstr("-2147483648"));
 	else if (n >= 10)
 	{
@@ -24,7 +24,7 @@ void	ft_putnbr(int n)
 	else if (n < 0)
 	{
 		ft_putchar('-');
-		ft_putnbr(n);
+		ft_putnbr(n * -1);
 	}
 	else
 		ft_putchar(n + '0');

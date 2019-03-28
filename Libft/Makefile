@@ -6,15 +6,13 @@
 #    By: winorth <winorth@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/02/14 12:11:20 by winorth           #+#    #+#              #
-#    Updated: 2019/03/13 16:19:25 by winorth          ###   ########.fr        #
+#    Updated: 2019/03/18 13:28:42 by winorth          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libft.a
 
-CC = gcc -g
-
-FLAG = -Wall -Werror -Wextra
+FLAGS = -Wall -Werror -Wextra -c
 
 SRC = ft_atoi.c ft_bzero.c ft_isalnum.c ft_isalpha.c ft_isascii.c \
 ft_isdigit.c ft_isprint.c ft_itoa.c ft_memalloc.c ft_memcpy.c \
@@ -28,14 +26,17 @@ ft_strncpy.c ft_strnequ.c ft_strnew.c ft_strnstr.c ft_strrchr.c \
 ft_strsplit.c ft_strstr.c ft_strsub.c ft_strtrim.c ft_tolower.c ft_toupper.c \
 ft_wordlength.c ft_wordcount.c ft_iswhitespaces.c ft_isstrwhitespaces.c \
 ft_isotherwhitespaces.c ft_lstadd.c ft_lstdel.c ft_lstdelone.c \
-ft_lstiter.c ft_lstmap.c ft_lstnew.c
+ft_lstiter.c ft_lstmap.c ft_lstnew.c ft_strndup.c
 
 OBJS = $(SRC:.c=.o)
 
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	ar rc libft.a $(OBJS)
+	ar rc $(NAME) $(OBJS)
+
+$(OBJS):
+	gcc $(FLAGS) $(SRC)
 
 clean:
 	rm -f $(OBJS)

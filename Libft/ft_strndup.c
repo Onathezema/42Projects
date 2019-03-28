@@ -6,13 +6,13 @@
 /*   By: winorth <winorth@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/26 13:02:40 by winorth           #+#    #+#             */
-/*   Updated: 2019/03/13 16:10:45 by winorth          ###   ########.fr       */
+/*   Updated: 2019/03/13 20:12:43 by winorth          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char	ft_strndup(const char *s, size_t n)
+char	*ft_strndup(const char *s, size_t n)
 {
 	char	*des;
 	char	*tem;
@@ -26,5 +26,5 @@ char	ft_strndup(const char *s, size_t n)
 		n--;
 	}
 	*tem = '\0';
-	return (*des);
+	return (des);
 }

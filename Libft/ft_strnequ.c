@@ -6,7 +6,7 @@
 /*   By: winorth <winorth@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/14 14:25:38 by winorth           #+#    #+#             */
-/*   Updated: 2019/02/28 13:18:02 by winorth          ###   ########.fr       */
+/*   Updated: 2019/03/13 20:18:28 by winorth          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		ft_strnequ(char const *s1, char const *s2, size_t n)
 {
-	if (ft_strncmp(s1, s2, n) == 0)
+	if (s1 && s2 && ft_strncmp(s1, s2, n) == 0)
 		return (1);
 	return (0);
 }
