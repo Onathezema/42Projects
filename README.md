@@ -10,3 +10,6 @@ as a parameter. 97/100 (Fixed code now, should be 100/100)
 
 # Fourth Project: ft_printf
 Recreation of the printf() function in C. ?/100
+
+# Fifth Project: ft_ls
+Recreation of the command ls. ?/100
