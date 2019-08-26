@@ -1,116 +1,55 @@
-NAME := ft_printf
-DNAM := d_$(NAME)
-ANAM := a_$(NAME)
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: winorth <marvin@42.fr>                     +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2019/07/31 12:02:49 by winorth           #+#    #+#              #
+#    Updated: 2019/08/26 12:15:32 by winorth          ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
 
-CC ?= clang
-CFLAGS := -Wall -Wextra -Werror
-DFLAGS := -Wall -Wextra -g
-AFLAGS := $(DFLAGS) -fsanitize=address
+#REMOVE -g flag from ALL MAKEFILES
 
-LIBDIR := libft
-INCDIR := include
-OBJDIR := .obj
-DBGDIR := .dbg
-ASNDIR := .asn
-SRCDIR := src
+NAME = libftprintf.a
+CC = gcc
+CFLAGS = -Wall -Werror -Wextra
 
-INCFLAGS := -I$(INCDIR) -I$(LIBDIR)/$(INCDIR)
-LIBFLAGS := -L$(LIBDIR) -lft
-DEBGLIBS := $(LIBDIR)/d_libft.a
-ASANLIBS := $(LIBDIR)/a_libft.a
-FRAMWRKS :=
+FILES = src/ft_printf.c \
+	src/utilities.c \
+	src/parse_handlers.c \
+	src/handler_arr.c \
+	src/handle_bho.c \
+	src/handle_chars.c \
+	src/handle_intlong.c \
+	src/handle_misc.c \
+	src/handle_unsigned.c \
+	src/handle_strs.c \
 
+LIBFT = libft/
 
-SRC :=	
-
-OBJ := $(addprefix $(OBJDIR)/, $(SRC:.c=.o))
-DBG := $(addprefix $(DBGDIR)/, $(SRC:.c=.o))
-ASN := $(addprefix $(ASNDIR)/, $(SRC:.c=.o))
-
-NRM := $(shell which norminette)
-
-#make -C libft all
-#make -C libft clean
-#make -C libft dclean
-#make -sC libft debug
-#make -C libft dclean
-#make -sC libft asan
-#make -sC libft fclean
-NORME := $(addsuffix *.h,$(INCDIR)/) $(addsuffix *.c,$(SRCDIR)/)
-
-.PHONY: all
 all: $(NAME)
 
-$(NAME): $(OBJDIR) $(OBJ)
-	@$(CC) $(INCFLAGS) -o $(NAME) $(OBJ)
-	@echo "Compiled $(NAME)"
+libft:
+	@$(MAKE) -C $(LIBFT) $(OBJS)
 
-$(addprefix $(OBJDIR)/, %.o): $(addprefix $(SRCDIR)/, %.c)
-	$(CC) $(INCFLAGS) $(CFLAGS) -c -o $@ $<
+$(NAME): libft
+	@$(CC) $(CFLAGS) -c $(FILES)
+	@ar rcs $(NAME) *.o $(LIBFT)*.o
+	@ranlib $(NAME)
+	@rm *.o
 
-$(OBJDIR):
-	mkdir -p $(OBJDIR)
-
-.PHONY: clean
 clean:
-	rm -Rf $(OBJDIR)
+	@$(MAKE) -C $(LIBFT) clean
 
-.PHONY: fclean
 fclean: clean
-	rm -f $(NAME)
+	@rm -f $(NAME)
+	@$(MAKE) -C $(LIBFT) fclean
 
-.PHONY: re
 re: fclean all
 
-.PHONY: f
-f: asan
+test:
+	$(CC) $(CFLAGS) libft/libft.a src/*.c -I.
 
-.PHONY: d
-d: aclean
-
-.PHONY: asan
-asan: $(ASNDIR) $(ASN)
-	$(CC) $(AFLAGS) $(INCFLAGS) -o $(ANAM) $(ASN)
-
-$(addprefix $(ASNDIR)/, %.o): $(addprefix $(SRCDIR)/, %.c)
-	$(CC) $(AFLAGS) $(INCFLAGS) -c -o $@ $<
-
-$(ASNDIR):
-	mkdir -p $(ASNDIR)
-
-.PHONY: aclean
-aclean:
-	rm -rf $(ANAM) $(ANAM).dSYM
-
-.PHONY: j
-j: debug
-
-.PHONY: k
-k: dclean
-
-.PHONY: debug
-debug: $(DBGDIR) $(DBG)
-	$(CC) $(DFLAGS) $(INCFLAGS) -o $(DNAM) $(addprefix $(SRCDIR)/, $(SRC))
-
-$(addprefix $(DBGDIR)/, %.o): $(addprefix $(SRCDIR)/, %.c)
-	$(CC) $(DFLAGS) $(INCFLAGS) -c -o $@ $<
-
-$(DBGDIR):
-	mkdir -p $(DBGDIR)
-
-.PHONY: dclean
-dclean:
-	rm -rf $(DNAM) $(DNAM).dSYM
-
-.PHONY: tags
-tags:
-	ctags $(addsuffix *.h,$(INCDIR)/) $(addsuffix *.c,$(SRCDIR)/)
-
-.PHONY: norme
-norme:
-	$(NRM) $(NORME)
-
-.PHONY: codesize
-codesize:
-	@printf "Lines of code: "
-	@cat $(NORME) | grep -Ev '(^\/\*|^\*\*|^\*\/$$|^$$|\*\/)' | wc -l | cut -d' ' -f7
+.PHONY: all libft $(NAME) clean fclean re

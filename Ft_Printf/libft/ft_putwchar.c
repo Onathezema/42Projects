@@ -1,23 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd.c                                        :+:      :+:    :+:   */
+/*   ft_putwchar.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: winorth <winorth@student.42.fr>            +#+  +:+       +#+        */
+/*   By: winorth <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/21 18:02:27 by winorth           #+#    #+#             */
-/*   Updated: 2019/07/29 18:25:15 by winorth          ###   ########.fr       */
+/*   Created: 2019/07/29 18:23:33 by winorth           #+#    #+#             */
+/*   Updated: 2019/07/29 18:23:37 by winorth          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_lstadd(t_list **alst, void *content, size_t content_size)
+void	ft_putwchar(wchar_t chr)
 {
-	t_list	*new;
-
-	if ((new = ft_lstnew(content, content_size)) == NULL)
-		return (0);
-	ft_lstlink(alst, new);
-	return (1);
+	ft_putwchar_fd(chr, STDOUT_FILENO);
 }

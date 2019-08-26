@@ -12,7 +12,7 @@
 
 #include "libft.h"
 
-static int		nlen(int n)
+static int		nlen(intmax_t n)
 {
 	int	i;
 
@@ -22,7 +22,7 @@ static int		nlen(int n)
 	return (i);
 }
 
-char			*ft_itoa(int n)
+char			*ft_itoa(intmax_t n)
 {
 	char	*str;
 	long	j;

@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd.c                                        :+:      :+:    :+:   */
+/*   ft_nstrlen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: winorth <winorth@student.42.fr>            +#+  +:+       +#+        */
+/*   By: winorth <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2019/02/21 18:02:27 by winorth           #+#    #+#             */
-/*   Updated: 2019/07/29 18:25:15 by winorth          ###   ########.fr       */
+/*   Created: 2019/07/29 18:20:20 by winorth           #+#    #+#             */
+/*   Updated: 2019/07/29 18:20:25 by winorth          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-int	ft_lstadd(t_list **alst, void *content, size_t content_size)
+size_t	ft_nstrlen(const char *str, size_t maxlen)
 {
-	t_list	*new;
+	size_t i;
 
-	if ((new = ft_lstnew(content, content_size)) == NULL)
-		return (0);
-	ft_lstlink(alst, new);
-	return (1);
+	i = 0;
+	while (*str++ && i < maxlen)
+		i++;
+	return (i);
 }

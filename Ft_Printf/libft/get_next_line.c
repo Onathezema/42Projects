@@ -82,9 +82,9 @@ int				get_next_line(const int fd, char **line)
 {
 	int				result;
 	size_t			dist;
-	static char		buf[OPEN_MAX][BUFF_SIZE + 1];
+	static char		buf[FOPEN_MAX][BUFF_SIZE + 1];
 
-	if (fd < 0 || !line || fd > OPEN_MAX)
+	if (fd < 0 || !line || fd > FOPEN_MAX)
 		return (-1);
 	if (!(*line = ft_strnew(1)))
 		return (-1);
