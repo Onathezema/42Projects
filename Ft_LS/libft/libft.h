@@ -6,7 +6,7 @@
 /*   By: winorth <winorth@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/02/12 16:25:35 by winorth           #+#    #+#             */
-/*   Updated: 2019/08/19 19:00:54 by winorth          ###   ########.fr       */
+/*   Updated: 2019/09/08 19:11:16 by winorth          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -117,4 +117,9 @@ void				ft_strrev(char *s);
 void				*ft_realloc(void *ptr, size_t old, size_t new_size);
 char				*ft_ftoa(long double n, size_t prec);
 char				*ft_strmerge(char *a, char *b);
+char				*ft_swapnfree(char *new, char **old);
+int					ft_printf(const char *format, ...);
+int					ft_dprintf(int fd, const char *format, ...);
+int					numlength(long long num);
+
 #endif

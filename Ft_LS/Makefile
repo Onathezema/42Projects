@@ -3,35 +3,38 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: winorth <winorth@student.42.fr>            +#+  +:+       +#+         #
+#    By: winorth <marvin@42.fr>                     +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2019/02/14 12:11:20 by winorth           #+#    #+#              #
-#    Updated: 2019/09/06 17:04:02 by winorth          ###   ########.fr        #
+#    Created: 2019/09/08 16:41:09 by winorth           #+#    #+#              #
+#    Updated: 2019/09/09 13:30:17 by winorth          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME = libft.a
+NAME = ft_ls
 
-FLAGS = -Wall -Werror -Wextra -c
+CFLAGS = -Wall -Wextra -Werror -g
+
+SRC = src/*.c
+
+I = -I include/
 
 O = *.o
 
-I = -I ./include
-
-SRC = src/*.c \
-      src/printf/*.c \
+L = libft/libft.a
 
 all: $(NAME)
 
 $(NAME):
-	gcc $(FLAGS) $(I) $(SRC)
-	ar rc $(NAME) $(O)
-	rm $(O)
+	@make -C libft
+	@gcc $(CFLAGS) -c $(I) $(SRC)
+	@gcc $(CFLAGS) $(O) $(L) -o $(NAME)
 
 clean:
-	rm -f $(O)
+	@make -C libft clean
+	@rm -rf $(O)
 
 fclean: clean
-	rm -f $(NAME)
+	@make -C libft fclean
+	@rm -rf $(NAME)
 
 re: fclean all
