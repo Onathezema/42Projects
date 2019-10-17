@@ -15,4 +15,8 @@ Recreation of the printf() function in C. 108/100
 Recreation of the command ls. 116/100
 
 # Sixth Project: ft_ssl_md5
-Recreation of the MD5 hashing algorithm. ?/100
+Recreation of the MD5 hashing algorithm. 100/100 (Will continue to play with other
+algorithms as well)
+
+# Seventh Project: Init
+Small project focused on the discovery of system and network commands ?/100
