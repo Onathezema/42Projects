@@ -19,4 +19,4 @@ Recreation of the MD5 hashing algorithm. 100/100 (Will continue to play with oth
 algorithms as well)
 
 # Seventh Project: Init
-Small project focused on the discovery of system and network commands ?/100
+Small project focused on the discovery of system and network commands. ?/100
